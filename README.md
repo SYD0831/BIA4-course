@@ -1,5 +1,42 @@
-# TITLE OF YOUR PROJECT
+# MalariaSpecNet
 
-Please use this repository to upload your code and documentation/examples.
+MalariaSpecNet is a CNN-based malaria parasite classification software for automated recognition of different Plasmodium species and uninfected blood smear images.  
+This project was developed by **Group 1** and includes both a graphical user interface (GUI) and reusable Python scripts for inference and model training.
 
-You can edit this file and use it as a README for your project 
+---
+
+## Abstract
+
+We are Group 1, and we developed **MalariaSpecNet**, a CNN-based software tool for automated malaria parasite classification from microscopic blood smear images. This project summarizes the design, implementation and evaluation of MalariaSpecNet, and explains how our group organized data preparation, model training and result analysis. It also reflects on my individual contribution, highlighting what went well and what could have been improved, and concludes with current limitations of MalariaSpecNet and priorities for future enhancement of its diagnostic performance.
+
+---
+
+## Set up environment
+
+```bash
+# Move to project folder
+cd MalariaSpecNet
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+## How to Use
+
+```bash
+python GUI.py
+```
+
+## Project Structure
+
+```text
+.
+├── MalariaSpecNet/               # Core application directory
+│   ├── GUI.py                    # Main script to launch the GUI
+│   ├── train.py                  # Script for model training
+│   ├── malaria_predict.py        # Inference logic and utility functions
+│   ├── model.ckpt                # Pre-trained model checkpoint
+│   └── requirements.txt          # Python dependencies
+├── Test/                         # Example images for quick testing
+├── Malaria_Species...Documentation.pdf  # Detailed project report
+└── README.md                     # Project documentation
