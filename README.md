@@ -5,12 +5,6 @@ This project was developed by **Group 1** and includes both a graphical user int
 
 ---
 
-## Abstract
-
-We are Group 1, and we developed **MalariaSpecNet**, a CNN-based software tool for automated malaria parasite classification from microscopic blood smear images. This project summarizes the design, implementation and evaluation of MalariaSpecNet, and explains how our group organized data preparation, model training and result analysis. It also reflects on my individual contribution, highlighting what went well and what could have been improved, and concludes with current limitations of MalariaSpecNet and priorities for future enhancement of its diagnostic performance.
-
----
-
 ## Set up environment
 
 ```bash
