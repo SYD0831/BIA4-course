@@ -1,0 +1,11 @@
+torch 
+pytorch-lightning 
+albumentations 
+opencv-python 
+customtkinter 
+pillow 
+pandas 
+tqdm
+scikit-learn
+tensorboard
+tkinterdnd2
