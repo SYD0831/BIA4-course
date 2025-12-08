@@ -1,0 +1,11 @@
+Huang Ziyao: Collected falciparum sample images and wrote the documentation files.
+
+Zhang Xinyue: Collected ovale sample images and wrote the documentation files.
+
+Zhang Tianyi: Collected vivax sample images and wrote the documentation files.
+
+Shen Yu: Constructed the prediction model codebase and implemented core algorithms.
+
+Chen Qiuxu: Conducted model training, performed code testing, and validated system performance.
+
+Zhu Pinglei: Developed the GUI-related code and designed user interface components.

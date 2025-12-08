@@ -38,13 +38,10 @@ def malaria_predict(model_path: str, image_paths: list[Path]) -> pd.DataFrame:
             results.append([predicted_class, confidence])
     return pd.DataFrame(results, columns=["predicted_class", "confidence"])
 
-# --------------------- 修改的主入口（无参数、固定路径） ---------------------
 if __name__ == "__main__":
-    model_path = Path("./model.ckpt")                                  # 固定模型路径
-    image_folder = Path("./input")                                     # 固定图片文件夹
-    image_files = [Path("./input/ovale.tif")]                              # 固定读取 T.tif（无需通配）
+    model_path = Path("./model.ckpt")
+    image_folder = Path("./input")
+    image_files = [Path("./input/ovale.tif")]
 
     # results = malaria_predict(model_path, image_files)
-
-    # 只打印矩阵结果（predicted_class 和 confidence）
     # print(results.to_string(index=False))

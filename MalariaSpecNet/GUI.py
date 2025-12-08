@@ -439,11 +439,8 @@ class MalariaClassificationApp:
     
     def clear_cache(self):
         """Clear button click event"""
-        # 销毁当前窗口下所有组件
         for widget in self.root.winfo_children():
             widget.destroy()
-
-        # 重新运行 __init__ 初始化整个界面
         self.__init__(self.root)
 
     def run_classification(self):
@@ -457,7 +454,7 @@ class MalariaClassificationApp:
         self.run_btn.configure(text="⏳ Running...")
         self.root.update()
         
-        model_path = Path("./model.ckpt")
+        model_path = Path("./negative.ckpt")
         image_paths = [Path(img['path']) for img in self.images]
         df = malaria_predict(model_path, image_paths)
         
@@ -477,7 +474,6 @@ class MalariaClassificationApp:
         if not self.images or not self.images[0]['result']:
             return
         
-        # 选择保存位置
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         default_filename = f"malaria_classification_results_{timestamp}.csv"
         
@@ -506,14 +502,14 @@ class MalariaClassificationApp:
                 self.status_label.configure(
                     text=f"Download complete! File saved to: {file_path}"
                 )
-                self.status_indicator.configure(text_color="#16A34A")  # 绿色
+                self.status_indicator.configure(text_color="#16A34A")
                 
             except Exception as e:
                 # Display error message
                 self.status_label.configure(
                     text=f"Save failed: {str(e)}"
                 )
-                self.status_indicator.configure(text_color="#DC2626")  # 红色
+                self.status_indicator.configure(text_color="#DC2626")
     
     def update_status(self, new_status):
         """Update Status"""
