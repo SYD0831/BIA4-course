@@ -1,6 +1,5 @@
 # model/standard_net.py
 # 7-channel CNN for MP-IDB (falciparum / vivax / ovale)
-# 架构：4 个卷积块 + 2 个全连接层，配合 7 通道输入，用于 3 分类。
 
 import torch
 from torch import nn
@@ -10,21 +9,7 @@ from torchmetrics.classification import Accuracy
 
 
 class MPIDBCNN(nn.Module):
-    """
-    7 通道 CNN:
 
-    输入: (B, 7, 100, 100)
-      7 通道 = [R, G, B, L(Lab), S(HSV), Laplacian, TopHat]
-      -> 通过 data/mpidb_dataset.py 中的 to7ch() 构造
-
-    结构:
-      Block1: Conv(7->32) + BN + LeakyReLU + MaxPool + Dropout
-      Block2: Conv(32->64)  + BN + LeakyReLU + MaxPool + Dropout
-      Block3: Conv(64->128) + BN + LeakyReLU + MaxPool + Dropout
-      Block4: Conv(128->256)+ BN + LeakyReLU + MaxPool + Dropout
-      展平 -> FC1(256*6*6 -> 256) + LeakyReLU
-           -> FC2(256 -> num_classes)
-    """
     def __init__(self, in_ch: int = 7, num_classes: int = 3, p: float = 0.3):
         super().__init__()
 

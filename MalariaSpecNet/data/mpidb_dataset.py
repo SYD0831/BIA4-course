@@ -10,11 +10,7 @@ import albumentations as A
 
 
 def to7ch(img_bgr: np.ndarray) -> np.ndarray:
-    """
-    输入: BGR uint8 (H,W,3)
-    输出: float32 (H,W,7) in [0,1]
-      [R,G,B, L(Lab), S(HSV), Laplacian(灰度梯度), TopHat(灰度形态学)]
-    """
+
     # RGB
     img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 
@@ -56,13 +52,7 @@ def _build_transforms(img_size=100, aug=True):
 
 
 class MpidbDataset(Dataset):
-    """
-    目录结构（你已经准备好）：
-      root/
-        train/ falciparum|vivax|ovale / *.jpg
-        val/   falciparum|vivax|ovale / *.jpg
-        test/  falciparum|vivax|ovale / *.jpg
-    """
+
     IMG_EXTS = (".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff")
 
     def __init__(

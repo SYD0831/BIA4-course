@@ -4,10 +4,7 @@ import pytorch_lightning as pl
 from torch.utils.data import DataLoader
 
 class DInterface(pl.LightningDataModule):
-    """
-    通用 DataModule：根据 dataset 名（文件名 snake_case）动态加载对应类（CamelCase），
-    并用 split=train/val/test 实例化三套 Dataset。
-    """
+
     def __init__(
         self,
         num_workers: int = 8,

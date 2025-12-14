@@ -8,15 +8,31 @@ This project was developed by **Group 1** and includes both a graphical user int
 ## Set up environment
 
 ```bash
-# Move to project folder
+# 1. Create and activate conda environment (Python 3.10)
+conda create -n malariaspecnet python=3.10
+conda activate malariaspecnet
+
+# 2. Move to project folder
 cd MalariaSpecNet
 
-# Install dependencies
+# 3. Install dependencies
 pip install -r requirements.txt
 ```
 
 ## How to Use
 
+### Option 1 · Terminal (Command Line)
+
+```bash
+# General usage:
+python predict.py [-c CHECKPOINT] -i INPUT_FOLDER [-o OUTPUT_CSV]
+
+# Example:
+# python predict.py -i ../Test -o ../Test_predictions_result.csv
+
+```
+
+### Option 2 · GUI (Graphical User Interface)
 ```bash
 python GUI.py
 ```
@@ -31,6 +47,7 @@ python GUI.py
 │   ├── malaria_predict.py        # Inference logic and utility functions
 │   ├── model.ckpt                # Pre-trained model checkpoint
 │   └── requirements.txt          # Python dependencies
-├── Test/                         # Example images for quick testing
-├── Malaria_Species...Documentation.pdf  # Detailed project report
-└── README.md                     # Project documentation
+├── Test                          # Example images for quick testing
+├── Documentation.pdf             # Instruction of MalariaSpecNet
+└── README.md
+```

@@ -301,6 +301,17 @@ pip install -r requirements.txt
 
 ### 9.2 Launching the Application
 
+#### Option 1 · Terminal (Command Line)
+```bash
+# General usage:
+python predict.py [-c CHECKPOINT] -i INPUT_FOLDER [-o OUTPUT_CSV]
+
+# Example:
+# python predict.py -i ../Test -o ../Test_predictions_result.csv
+
+```
+#### Option 2 · GUI (Graphical User Interface)
+
 ```bash
 python GUI.py
 ```
